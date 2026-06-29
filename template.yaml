@@ -1,0 +1,7 @@
+Resources:
+  ClarvoDocumentProcessorFunction:   # <-- this is what you use in commands
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: clarvoDocumentProcessor
+      Handler: clarvo_document_processor.lambda_handler
+      Runtime: python3.11
