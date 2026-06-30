@@ -1,0 +1,66 @@
+{
+    "version": "0",
+    "id": "748cc0af-fdf6-7d68-4605-dd8550537f91",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-27T08:31:43Z",
+    "region": "ap-southeast-1",
+    "resources": [
+        "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+        "version": "0",
+        "event-version": "1.0",
+        "bucket": {
+            "name": "aip-c01-bucket"
+        },
+        "object": {
+            "key": "raw/YTDown_YouTube_The-5-SCARY-Stages-of-AI-AGI-ANI-ASI-SIN_Media_YX0j2KSkr0A_001_1080p.mp4",
+            "size": 217216136,
+            "etag": "376333f83b6f80f17972e0c1f9b6b606-13",
+            "version-id": "oyPFruibjgb9VF.bYegR5q94JJdrgn0r",
+            "sequencer": "006A3F8A5A02FA470A"
+        },
+        "request-id": "CY6TKNWNN5MY1Q9R",
+        "requester": "408897322877",
+        "source-ip-address": "180.191.157.132",
+        "reason": "CompleteMultipartUpload"
+    },
+    "transcribe": {
+        "TranscriptionJob": {
+            "CreationTime": "2026-06-27T08:31:44.186Z",
+            "IdentifyLanguage": true,
+            "Media": {
+                "MediaFileUri": "s3://aip-c01-bucket/raw/YTDown_YouTube_The-5-SCARY-Stages-of-AI-AGI-ANI-ASI-SIN_Media_YX0j2KSkr0A_001_1080p.mp4"
+            },
+            "StartTime": "2026-06-27T08:31:44.204Z",
+            "TranscriptionJobName": "bde41627-fac2-4f95-ae6c-58935f6cff58",
+            "TranscriptionJobStatus": "IN_PROGRESS"
+        }
+    },
+    "transcribeResult": {
+        "TranscriptionJob": {
+            "CompletionTime": "2026-06-27T08:32:37.094Z",
+            "CreationTime": "2026-06-27T08:31:44.186Z",
+            "IdentifiedLanguageScore": 0.78895766,
+            "IdentifyLanguage": true,
+            "LanguageCode": "en-US",
+            "Media": {
+                "MediaFileUri": "s3://aip-c01-bucket/raw/YTDown_YouTube_The-5-SCARY-Stages-of-AI-AGI-ANI-ASI-SIN_Media_YX0j2KSkr0A_001_1080p.mp4"
+            },
+            "MediaFormat": "mp4",
+            "MediaSampleRateHertz": 44100,
+            "Settings": {
+                "ChannelIdentification": false,
+                "ShowAlternatives": false
+            },
+            "StartTime": "2026-06-27T08:31:44.204Z",
+            "Transcript": {
+                "TranscriptFileUri": "https://s3.ap-southeast-1.amazonaws.com/aip-c01-bucket/bde41627-fac2-4f95-ae6c-58935f6cff58.json"
+            },
+            "TranscriptionJobName": "bde41627-fac2-4f95-ae6c-58935f6cff58",
+            "TranscriptionJobStatus": "COMPLETED"
+        }
+    }
+}

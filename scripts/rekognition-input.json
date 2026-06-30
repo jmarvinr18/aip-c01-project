@@ -1,0 +1,583 @@
+{
+    "version": "0",
+    "id": "314d1ca0-a11d-1f1b-3c34-e37cd650c87b",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-28T07:37:41Z",
+    "region": "ap-southeast-1",
+    "resources": [
+      "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+      "version": "0",
+      "event-version": "1.0",
+      "bucket": {
+        "name": "aip-c01-bucket"
+      },
+      "object": {
+        "key": "raw/Connect - Media Ministry - 1.jpg",
+        "size": 341168,
+        "etag": "04936538a3de48a9f84d362f70b3f0c9",
+        "version-id": "FQJv6AS5SC58qUwOt1kq2WcGb3CxlQMN",
+        "sequencer": "006A40CF456742FEBA"
+      },
+      "request-id": "CYA2HDCK9JGBRV0B",
+      "requester": "408897322877",
+      "source-ip-address": "112.200.229.199",
+      "reason": "PutObject"
+    },
+    "rekognition": {
+      "LabelModelVersion": "3.0",
+      "Labels": [
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Person Description"
+            }
+          ],
+          "Confidence": 99.99968,
+          "Instances": [],
+          "Name": "Crowd",
+          "Parents": [
+            {
+              "Name": "Person"
+            }
+          ]
+        },
+        {
+          "Aliases": [
+            {
+              "Name": "Human"
+            }
+          ],
+          "Categories": [
+            {
+              "Name": "Person Description"
+            }
+          ],
+          "Confidence": 99.99968,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.0459575,
+                "Left": 0.099062175,
+                "Top": 0.49034107,
+                "Width": 0.017539797
+              },
+              "Confidence": 70.04316
+            }
+          ],
+          "Name": "Person",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Performing Arts"
+            }
+          ],
+          "Confidence": 99.383644,
+          "Instances": [],
+          "Name": "Audience",
+          "Parents": [
+            {
+              "Name": "Crowd"
+            },
+            {
+              "Name": "Person"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Plants and Flowers"
+            }
+          ],
+          "Confidence": 99.099365,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.09813304,
+                "Left": 0.40232837,
+                "Top": 0.5937035,
+                "Width": 0.053608105
+              },
+              "Confidence": 99.099365
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.25690672,
+                "Left": 0.8474875,
+                "Top": 0.74164915,
+                "Width": 0.15251248
+              },
+              "Confidence": 97.490456
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.15694077,
+                "Left": 0.7366972,
+                "Top": 0.80758184,
+                "Width": 0.09492387
+              },
+              "Confidence": 91.227005
+            }
+          ],
+          "Name": "Plant",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Furniture and Furnishings"
+            }
+          ],
+          "Confidence": 99.068756,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.21823348,
+                "Left": 0.2712635,
+                "Top": 0.6327672,
+                "Width": 0.12511398
+              },
+              "Confidence": 99.068756
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.18520848,
+                "Left": 0.48001993,
+                "Top": 0.6292341,
+                "Width": 0.110860564
+              },
+              "Confidence": 97.850426
+            }
+          ],
+          "Name": "Chair",
+          "Parents": [
+            {
+              "Name": "Furniture"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Furniture and Furnishings"
+            }
+          ],
+          "Confidence": 99.068756,
+          "Instances": [],
+          "Name": "Furniture",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Furniture and Furnishings"
+            }
+          ],
+          "Confidence": 99.03591,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.14754088,
+                "Left": 0.37934235,
+                "Top": 0.68480194,
+                "Width": 0.11434154
+              },
+              "Confidence": 99.03591
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.11551586,
+                "Left": 0.5425,
+                "Top": 0.68343,
+                "Width": 0.122628614
+              },
+              "Confidence": 90.64496
+            }
+          ],
+          "Name": "Desk",
+          "Parents": [
+            {
+              "Name": "Furniture"
+            },
+            {
+              "Name": "Table"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Furniture and Furnishings"
+            }
+          ],
+          "Confidence": 99.03591,
+          "Instances": [],
+          "Name": "Table",
+          "Parents": [
+            {
+              "Name": "Furniture"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Furniture and Furnishings"
+            }
+          ],
+          "Confidence": 97.932724,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.042563926,
+                "Left": 0.40044084,
+                "Top": 0.00004083157,
+                "Width": 0.028550116
+              },
+              "Confidence": 97.932724
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.05942652,
+                "Left": 0.8742568,
+                "Top": 0.1143955,
+                "Width": 0.02722959
+              },
+              "Confidence": 91.44888
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.05994785,
+                "Left": 0.5921023,
+                "Top": 0.09981725,
+                "Width": 0.02412718
+              },
+              "Confidence": 78.229126
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.050137166,
+                "Left": 0.98176426,
+                "Top": 0.23793522,
+                "Width": 0.017991168
+              },
+              "Confidence": 59.074997
+            }
+          ],
+          "Name": "Lamp",
+          "Parents": []
+        },
+        {
+          "Aliases": [
+            {
+              "Name": "Public Speaking"
+            }
+          ],
+          "Categories": [
+            {
+              "Name": "Actions"
+            }
+          ],
+          "Confidence": 95.77791,
+          "Instances": [],
+          "Name": "Speech",
+          "Parents": [
+            {
+              "Name": "Audience"
+            },
+            {
+              "Name": "Crowd"
+            },
+            {
+              "Name": "Person"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Hobbies and Interests"
+            }
+          ],
+          "Confidence": 94.25369,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.330768,
+                "Left": 0.1486173,
+                "Top": 0.5697247,
+                "Width": 0.095531255
+              },
+              "Confidence": 94.25369
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.5341385,
+                "Left": 0.099946834,
+                "Top": 0.46566895,
+                "Width": 0.11471208
+              },
+              "Confidence": 80.89855
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.37955222,
+                "Left": 0.0015756527,
+                "Top": 0.56671333,
+                "Width": 0.12318708
+              },
+              "Confidence": 56.37081
+            }
+          ],
+          "Name": "Guitar",
+          "Parents": [
+            {
+              "Name": "Musical Instrument"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Hobbies and Interests"
+            }
+          ],
+          "Confidence": 94.25369,
+          "Instances": [],
+          "Name": "Musical Instrument",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Events and Attractions"
+            }
+          ],
+          "Confidence": 93.68578,
+          "Instances": [],
+          "Name": "Podium",
+          "Parents": [
+            {
+              "Name": "Audience"
+            },
+            {
+              "Name": "Crowd"
+            },
+            {
+              "Name": "Person"
+            },
+            {
+              "Name": "Speech"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 93.09679,
+          "Instances": [],
+          "Name": "Computer Hardware",
+          "Parents": [
+            {
+              "Name": "Electronics"
+            },
+            {
+              "Name": "Hardware"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 93.09679,
+          "Instances": [],
+          "Name": "Electronics",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 93.09679,
+          "Instances": [],
+          "Name": "Hardware",
+          "Parents": [
+            {
+              "Name": "Electronics"
+            }
+          ]
+        },
+        {
+          "Aliases": [
+            {
+              "Name": "Display"
+            },
+            {
+              "Name": "Digital Display"
+            },
+            {
+              "Name": "LCD Screen"
+            }
+          ],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 93.09679,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.115464576,
+                "Left": 0.8453461,
+                "Top": 0.60291046,
+                "Width": 0.12822704
+              },
+              "Confidence": 93.09679
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.25211015,
+                "Left": 0,
+                "Top": 0.0003166771,
+                "Width": 0.16355558
+              },
+              "Confidence": 77.54109
+            }
+          ],
+          "Name": "Monitor",
+          "Parents": [
+            {
+              "Name": "Computer Hardware"
+            },
+            {
+              "Name": "Electronics"
+            },
+            {
+              "Name": "Hardware"
+            },
+            {
+              "Name": "Screen"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 93.09679,
+          "Instances": [],
+          "Name": "Screen",
+          "Parents": [
+            {
+              "Name": "Electronics"
+            }
+          ]
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Apparel and Accessories"
+            }
+          ],
+          "Confidence": 78.7448,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.027777279,
+                "Left": 0.42430684,
+                "Top": 0.6652098,
+                "Width": 0.045070194
+              },
+              "Confidence": 78.7448
+            },
+            {
+              "BoundingBox": {
+                "Height": 0.020743994,
+                "Left": 0.5834764,
+                "Top": 0.66814715,
+                "Width": 0.03686856
+              },
+              "Confidence": 67.48273
+            }
+          ],
+          "Name": "Box",
+          "Parents": []
+        },
+        {
+          "Aliases": [],
+          "Categories": [
+            {
+              "Name": "Colors and Visual Composition"
+            }
+          ],
+          "Confidence": 56.103264,
+          "Instances": [],
+          "Name": "Purple",
+          "Parents": []
+        },
+        {
+          "Aliases": [
+            {
+              "Name": "Audio Speaker"
+            }
+          ],
+          "Categories": [
+            {
+              "Name": "Technology and Computing"
+            }
+          ],
+          "Confidence": 55.837135,
+          "Instances": [
+            {
+              "BoundingBox": {
+                "Height": 0.056394987,
+                "Left": 8.596501e-8,
+                "Top": 0.94350016,
+                "Width": 0.103006184
+              },
+              "Confidence": 55.837135
+            }
+          ],
+          "Name": "Speaker",
+          "Parents": [
+            {
+              "Name": "Electronics"
+            }
+          ]
+        }
+      ]
+    }
+  }

@@ -1,0 +1,99 @@
+{
+    "version": "0",
+    "id": "6936a628-38b5-a859-14af-63efbdbf5a06",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-27T04:30:23Z",
+    "region": "ap-southeast-1",
+    "resources": [
+      "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+      "version": "0",
+      "event-version": "1.0",
+      "bucket": {
+        "name": "aip-c01-bucket"
+      },
+      "object": {
+        "key": "raw/The role of AI in SDLC_2026.pdf",
+        "size": 2974763,
+        "etag": "e232d3971dfdca115b35740de77587c1",
+        "version-id": "DSUzUCbjTS0VpRlYIEqJ4Y0Ne_Wnjmye",
+        "sequencer": "006A3F51DF0B258BCB"
+      },
+      "request-id": "334EJG6Q5N6Y3K1G",
+      "requester": "408897322877",
+      "source-ip-address": "180.191.157.132",
+      "reason": "PutObject"
+    },
+    "textract": {
+      "JobId": "ee903898cc758d22d261cff83e4b8267b43ff13395b8a4bee9e53096a4a13807"
+    },
+    "textractResult": {
+      "Blocks": [
+        {
+          "BlockType": "PAGE",
+          "Geometry": {
+            "BoundingBox": {
+              "Height": 1,
+              "Left": 0,
+              "Top": 0,
+              "Width": 1
+            },
+            "Polygon": [
+              {
+                "X": 0,
+                "Y": 0
+              },
+              {
+                "X": 1,
+                "Y": 0
+              },
+              {
+                "X": 1,
+                "Y": 1
+              },
+              {
+                "X": 7.45663e-8,
+                "Y": 1
+              }
+            ]
+          },
+          "Id": "d2e613f8-5f55-48fe-9351-6f7dc9dfce72",
+          "Page": 1,
+          "Relationships": [
+            {
+              "Ids": [
+                "2a4cb0cb-6785-4869-af64-33b3d0ed9263",
+                "a823e17c-18b3-43c3-9d6d-4df3ac582e60",
+                "c41c0b2e-8281-43c4-ab8a-658df14600d7",
+                "1aa56dca-05c1-4743-a6bc-f7f0fd78a7a9",
+                "3d0fc576-89b1-4399-8950-cca3d27feacf",
+                "9aca5ac7-e7ce-4481-8d4b-51e4836a0b5a",
+                "3bc2c9b1-903f-4391-a4eb-66f156d983bc",
+                "23cc82f4-ea75-4af0-ae73-9951878b13b6",
+                "053336ec-b43f-4d54-9e21-719056d1fc19",
+                "952387f3-a28e-464f-8d5a-cf31b7a4f2a7",
+                "f02cab7c-d02f-4501-bdd6-df5d87f1e1ee",
+                "a381573f-3848-474d-9826-28de150ffb32",
+                "447c6701-3828-4af0-a35e-5d43c66975e7",
+                "f225fd33-440a-4261-a65b-2ec1149b38c5",
+                "2463d2be-d680-482a-b109-9adbe4b5d3c4"
+              ],
+              "Type": "CHILD"
+            }
+          ]
+        }
+      ],
+      "DetectDocumentTextModelVersion": "1.0",
+      "DocumentMetadata": {
+        "Pages": 23
+      },
+      "JobStatus": "SUCCEEDED",
+      "NextToken": "TE9IcPudCFhTik2WMLUq3LqW/QrhXhSkUmYKw5XzKcTVf8MWlHISC92kFDHv1y4JV8SeURjB06IXgECpHf8xv1e52GSn2uZ2839BlMzBbtDFvIjR9v6yyn/0szSzXe5RCPM="
+    }
+  
+}
+
+

@@ -1,0 +1,30 @@
+{
+    "version": "0",
+    "id": "314d1ca0-a11d-1f1b-3c34-e37cd650c87b",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-28T07:37:41Z",
+    "region": "ap-southeast-1",
+    "resources": [
+        "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+        "version": "0",
+        "event-version": "1.0",
+        "bucket": {
+            "name": "aip-c01-bucket"
+        },
+        "object": {
+            "key": "raw/Connect - Media Ministry - 1.jpg",
+            "size": 341168,
+            "etag": "04936538a3de48a9f84d362f70b3f0c9",
+            "version-id": "FQJv6AS5SC58qUwOt1kq2WcGb3CxlQMN",
+            "sequencer": "006A40CF456742FEBA"
+        },
+        "request-id": "CYA2HDCK9JGBRV0B",
+        "requester": "408897322877",
+        "source-ip-address": "112.200.229.199",
+        "reason": "PutObject"
+    }
+}

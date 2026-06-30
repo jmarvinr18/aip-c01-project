@@ -1,0 +1,15 @@
+Invoking clarvo_document_processor.lambda_handler (python3.12)
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting /mnt/c/Users/USER/Documents/machine-learning/tutorials/Generative AI/aip-c01-project as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: f684f66eac07a07c22b62eb782bc459614bea7333fe24c38407ccfceaea70035
+START RequestId: c7b56927-3c66-44c6-8008-ea53cd4b3ba7 Version: $LATEST
+THIS IS KEY: $raw/Connect - Media Ministry - 1.jpg
+EVENT: {"version": "0", "id": "314d1ca0-a11d-1f1b-3c34-e37cd650c87b", "detail-type": "Object Created", "source": "aws.s3", "account": "408897322877", "time": "2026-06-28T07:37:41Z", "region": "ap-southeast-1", "resources": ["arn:aws:s3:::aip-c01-bucket"], "detail": {"version": "0", "event-version": "1.0", "bucket": {"name": "aip-c01-bucket"}, "object": {"key": "raw/Connect - Media Ministry - 1.jpg", "size": 341168, "etag": "04936538a3de48a9f84d362f70b3f0c9", "version-id": "FQJv6AS5SC58qUwOt1kq2WcGb3CxlQMN", "sequencer": "006A40CF456742FEBA"}, "request-id": "CYA2HDCK9JGBRV0B", "requester": "408897322877", "source-ip-address": "112.200.229.199", "reason": "PutObject"}}
+CONTEXT: LambdaContext([aws_request_id=c7b56927-3c66-44c6-8008-ea53cd4b3ba7,log_group_name=aws/lambda/ClarvoDocumentProcessorFunction,log_stream_name=$LATEST,function_name=ClarvoDocumentProcessorFunction,memory_limit_in_mb=128,function_version=$LATEST,invoked_function_arn=arn:aws:lambda:us-east-1:012345678912:function:ClarvoDocumentProcessorFunction,client_context=None,identity=CognitoIdentity([cognito_identity_id=None,cognito_identity_pool_id=None]),tenant_id=None])
+RECORD: 
+METADATA: {'ingested_at': '2026-06-28T07:37:41Z', 'source_key': 'raw/Connect - Media Ministry - 1.jpg', 'doc_type': ''}
+END RequestId: c7b56927-3c66-44c6-8008-ea53cd4b3ba7
+REPORT RequestId: c7b56927-3c66-44c6-8008-ea53cd4b3ba7	Init Duration: 0.02 ms	Duration: 2558.09 ms	Billed Duration: 2559 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+

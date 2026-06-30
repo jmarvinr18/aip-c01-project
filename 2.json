@@ -1,0 +1,30 @@
+{
+    "version": "0",
+    "id": "6936a628-38b5-a859-14af-63efbdbf5a06",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-27T04:30:23Z",
+    "region": "ap-southeast-1",
+    "resources": [
+        "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+        "version": "0",
+        "event-version": "1.0",
+        "bucket": {
+            "name": "aip-c01-bucket"
+        },
+        "object": {
+            "key": "raw/The role of AI in SDLC_2026.pdf",
+            "size": 2974763,
+            "etag": "e232d3971dfdca115b35740de77587c1",
+            "version-id": "DSUzUCbjTS0VpRlYIEqJ4Y0Ne_Wnjmye",
+            "sequencer": "006A3F51DF0B258BCB"
+        },
+        "request-id": "334EJG6Q5N6Y3K1G",
+        "requester": "408897322877",
+        "source-ip-address": "180.191.157.132",
+        "reason": "PutObject"
+    }
+}
