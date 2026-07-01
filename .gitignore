@@ -1,3 +1,5 @@
 sam-installation
 .env
 .aws-sam
+
+.env_file

@@ -1,1 +1,8 @@
-{"processed_key": "processed/The role of AI in SDLC_2026.jsonl", "char_count": 40454}
+{
+    "errorMessage": "tuple indices must be integers or slices, not str",
+    "errorType": "TypeError",
+    "requestId": "d5261da6-8d06-4c54-98fa-901e203ea243",
+    "stackTrace": [
+        "  File \"/var/task/lambda/clarvoBedrockAgentRetriever/lambda_function.py\", line 96, in lambda_handler\n    print(f\"{response[\"content\"][0][\"text\"], []}\")\n"
+    ]
+}

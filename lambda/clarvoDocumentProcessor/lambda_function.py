@@ -1,4 +1,7 @@
-import json, boto3, os, urllib.parse
+import json
+import boto3
+import os
+import urllib.parse
 from urllib.parse import urlparse
 from pathlib import Path
 
@@ -27,6 +30,7 @@ def gather_textract_text(job_id):
     print(f"TEXT: {text}")
     return "\n".join(text)
 
+
 def parse_s3_uri(uri):
     """Handle s3://, path-style, and virtual-hosted-style HTTPS URIs."""
     p = urlparse(uri)
@@ -41,23 +45,22 @@ def parse_s3_uri(uri):
     parts = path.split("/", 1)
     return parts[0], (parts[1] if len(parts) > 1 else "")
 
+
 def lambda_handler(event, context):
 
     bucket = event["detail"]["bucket"]["name"]
     key = urllib.parse.unquote_plus(event["detail"]["object"]["key"])
 
     file_path = Path(key)
-    
+
     extension = file_path.suffix
     clean_ext = extension.lstrip(".")  # Returns 'pdf'
 
     print(f"File Path: {file_path}")
     print(f"Extension: {clean_ext}")
 
-
     # textract = event.get("textract", {})
     # job_id = textract.get("JobId")
-
 
     print(f"THIS IS KEY: {key}")
 
@@ -66,7 +69,6 @@ def lambda_handler(event, context):
     job_id = textract.start_document_text_detection(
         DocumentLocation={"S3Object": {"Bucket": bucket, "Name": key}}
     )["JobId"]
-
 
     documentStatus = "IN_PROGRESS"
 
@@ -96,15 +98,19 @@ def lambda_handler(event, context):
     elif "rekognition" in event:
         print(f'REKOGNITION EVENT: {event["rekognition"]}')
         labels = event["rekognition"]["Labels"]
-        text = ", ".join(f'{lbl["Name"]} ({round(lbl["Confidence"])}%)' for lbl in labels)
+        text = ", ".join(
+            f'{lbl["Name"]} ({round(lbl["Confidence"])}%)' for lbl in labels)
 
     else:
         text = ""
 
-    text = text[:90000]  # stay under Comprehend's 100KB/call cap (chunk later in lab 1.12)
+    # stay under Comprehend's 100KB/call cap (chunk later in lab 1.12)
+    text = text[:90000]
 
-    entities = comprehend.detect_entities(Text=text, LanguageCode="en")["Entities"] if text else []
-    pii = comprehend.detect_pii_entities(Text=text, LanguageCode="en")["Entities"] if text else []
+    entities = comprehend.detect_entities(Text=text, LanguageCode="en")[
+        "Entities"] if text else []
+    pii = comprehend.detect_pii_entities(Text=text, LanguageCode="en")[
+        "Entities"] if text else []
 
     record = {
         "source_key": key,
@@ -121,20 +127,19 @@ def lambda_handler(event, context):
             "doc_type": clean_ext
         }
     }
-
-
-    ### THIS IS AN UPDATEEEEEEE
+    # THIS IS AN UPDATEEEEEEE
     print(f"EVENT: {json.dumps(event)}")
     print(f"CONTEXT: {context}")
     print(f"RECORD: {record}")
     print(f"METADATA: {metaData}")
 
-    out_key = "processed/" + os.path.splitext(os.path.basename(key))[0] + ".jsonl"
+    out_key = "processed/" + \
+        os.path.splitext(os.path.basename(key))[0] + ".jsonl"
 
     s3.put_object(Bucket=bucket, Key=out_key,
                   Body=(json.dumps(record) + "\n").encode("utf-8"),
                   ServerSideEncryption="aws:kms")
-    
+
     kb_source_key = f"kb-source/{os.path.splitext(os.path.basename(key))[0]}.txt.metadata.json"
     s3.put_object(Bucket=bucket, Key=kb_source_key,
                   Body=(json.dumps(metaData) + "\n").encode("utf-8"),

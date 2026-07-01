@@ -1,0 +1,18 @@
+{
+    "version": "0",
+    "id": "748cc0af-fdf6-7d68-4605-dd8550537f91",
+    "detail-type": "Object Created",
+    "source": "aws.s3",
+    "account": "408897322877",
+    "time": "2026-06-27T08:31:43Z",
+    "region": "ap-southeast-1",
+    "resources": [
+        "arn:aws:s3:::aip-c01-bucket"
+    ],
+    "detail": {
+        "version": "0",
+        "event-version": "1.0",
+        "text": "what is ai stages?",
+        "kb_id": "SI1PK19NAO"
+    }
+}
