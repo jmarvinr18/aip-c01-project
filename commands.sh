@@ -9,7 +9,11 @@ sam local invoke clarvoDocumentProcessor --event scripts/rekognition-input.json 
 ## Invoke Lambda locally [with AWS Transcribe]
 sam local invoke clarvoDocumentProcessor --event scripts/transcribe-input.json > output.json 2>logs/transcribe.logs
 
-sam local invoke ClarvoBedrockAgentRetriever --event scripts/transcribe-input.json > output.json 2>logs/ba_retriever.logs
+## Invoke Lambda locally for testing Agent Retriever
+sam local invoke ClarvoBedrockAgentRetriever --event scripts/bedrock-agent-retriever.json > output.json 2>logs/ba_retriever.logs
+
+## Invoke Lambda locally for Syncing Knowledge Base
+am local invoke clarvoKBSync > output.json 2>logs/ba_retriever.logs
 
 ## Update Lambda Function
 ./scripts/update-lambda.sh .

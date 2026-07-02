@@ -12,10 +12,16 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: clarvoDocumentProcessor
-      Handler: lambda.clarvoDocumentProcessor.lambda_function.lambda_handler
+      Handler: lambda.clarvoDocumentProcessor.lambda_handler
 
   ClarvoBedrockAgentRetriever: # <-- this is what you use in commands
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: clarvoBedrockAgentRetriever
-      Handler: lambda.clarvoBedrockAgentRetriever.lambda_function.lambda_handler
+      Handler: lambda.clarvoBedrockAgentRetriever.lambda_handler
+
+  ClarvoKBSync: # <-- this is what you use in commands
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: clarvoKBSync
+      Handler: lambda.clarvoKBSync.lambda_handler

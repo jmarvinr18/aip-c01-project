@@ -14,7 +14,7 @@ TOOL_CONFIG = {
     "tools": [{
         "toolSpec": {
             "name": "search_documents",
-            "description": """Search the company's document knowledge base for relevant passages. \
+            "description": """Always use search_documents before answering questions about documents. Search the company's document knowledge base for relevant passages. \
                 Use this whenever the user asks about the contents of uploaded \
                 documents, contracts, invoices or policies.""",
             "inputSchema": {"json": {
@@ -59,6 +59,8 @@ def ask(question: str, knowledge_base_id: str, num_results: int = 5):
 
     messages.append(out)
 
+    print(f"1ST RESPONSE: {json.dumps(response)}")
+
     if response["stopReason"] == "tool_use":
         tool_results = []
         for block in out["content"]:
@@ -79,10 +81,11 @@ def ask(question: str, knowledge_base_id: str, num_results: int = 5):
         final = brt.converse(
             modelId=MODEL, messages=messages, toolConfig=TOOL_CONFIG)
 
-        print(f"FINAL: {final}")
+        print(f"FINAL: {json.dumps(final)}")
         print(f"CONTENT: {final["output"]["message"]["content"]}")
 
-        return final["output"]["message"]["content"][0]["text"], hits
+        # final["output"]["message"]["content"][0]["text"], hits
+        return final
 
     print(f"OUT: {out}")
     print(f"CONTENT: {out["content"]}")
@@ -93,5 +96,5 @@ def ask(question: str, knowledge_base_id: str, num_results: int = 5):
 
 def lambda_handler(event, context):
     response = ask(event["detail"]["text"], event["detail"]["kb_id"])
-    print(f"{response["content"][0]["text"], []}")
+    print(f"RESPONSE: {response}")
     return response
