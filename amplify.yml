@@ -6,7 +6,7 @@ frontend:
         - echo "No build step - static site"
   artifacts:
     # deploy everything in the repo root as-is
-    baseDirectory: /chat-app
+    baseDirectory: chat-app
     files:
       - '**/*'
   cache:
