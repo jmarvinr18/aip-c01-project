@@ -4,5 +4,5 @@
 //
 // Format: wss://<api-id>.execute-api.ap-southeast-1.amazonaws.com/prod
 window.CONFIG = {
-  WS_URL: "wss://2f75paryz6.execute-api.ap-southeast-1.amazonaws.com/development/"
+  WS_URL: "wss://2f75paryz6.execute-api.ap-southeast-1.amazonaws.com/development"
 };
