@@ -1,0 +1,15 @@
+Invoking lambda.clarvoChatStream.lambda_handler (python3.12)
+Local image is out of date and will be updated to the latest runtime. To skip this, pass in the parameter --skip-pull-image
+Building image...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Using local image: public.ecr.aws/lambda/python:3.12-rapid-x86_64.
+
+Mounting /mnt/c/Users/USER/Documents/machine-learning/tutorials/Generative AI/aip-c01-project/.aws-sam/build/ClarvoChatStream as /var/task:ro,delegated, inside runtime container
+SAM_CONTAINER_ID: ed20c5b20cdec7bc07bfad5c7d177a63e853abca4f9d5c127a170e67a98c9f18
+START RequestId: 6e6114b7-b09c-4ab8-aa2d-0f29fd5f71f7 Version: $LATEST
+[ERROR] KeyError: 'requestContext'
+Traceback (most recent call last):
+  File "/var/task/lambda/clarvoChatStream.py", line 13, in lambda_handler
+    rc = event["requestContext"]
+END RequestId: 6e6114b7-b09c-4ab8-aa2d-0f29fd5f71f7
+REPORT RequestId: 6e6114b7-b09c-4ab8-aa2d-0f29fd5f71f7	Init Duration: 0.03 ms	Duration: 6994.57 ms	Billed Duration: 6995 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+

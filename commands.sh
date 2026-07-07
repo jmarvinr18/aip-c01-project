@@ -13,7 +13,14 @@ sam local invoke clarvoDocumentProcessor --event scripts/transcribe-input.json >
 sam local invoke ClarvoBedrockAgentRetriever --event scripts/bedrock-agent-retriever.json > output.json 2>logs/ba_retriever.logs
 
 ## Invoke Lambda locally for Syncing Knowledge Base
-am local invoke clarvoKBSync > output.json 2>logs/ba_retriever.logs
+sam local invoke clarvoKBSync > output.json 2>logs/ba_retriever.logs
+
+## Invoke Lambda locally for Chat Stream
+sam local invoke clarvoChatStream > output.json 2>logs/chat_stream.logs
 
 ## Update Lambda Function
 ./scripts/update-lambda.sh .
+
+
+## Login to CodeArtifact
+aws codeartifact login --tool pip --repository pypi-store --domain xctuality --domain-owner 408897322877 --region ap-southeast-1

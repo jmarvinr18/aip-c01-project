@@ -1,0 +1,13 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "No build step - static site"
+  artifacts:
+    # deploy everything in the repo root as-is
+    baseDirectory: /chat-app
+    files:
+      - '**/*'
+  cache:
+    paths: []

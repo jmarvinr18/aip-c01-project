@@ -1,0 +1,15 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Sid":"Invoke","Effect":"Allow",
+      "Action":["bedrock:InvokeModel","bedrock:InvokeModelWithResponseStream"],
+      "Resource":["arn:aws:bedrock:*::foundation-model/*",
+                  "arn:aws:bedrock:*:408897322877:inference-profile/*"] },
+    { "Sid":"Prompt","Effect":"Allow",
+      "Action":["bedrock:GetPrompt","bedrock:RenderPrompt"],
+      "Resource":"arn:aws:bedrock:ap-southeast-1:408897322877:prompt/*" },
+    { "Sid":"KB","Effect":"Allow",
+      "Action":["bedrock:Retrieve"],
+      "Resource":"arn:aws:bedrock:ap-southeast-1:408897322877:knowledge-base/7SFJSQDMRI" }
+  ]
+}
