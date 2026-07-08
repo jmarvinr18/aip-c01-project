@@ -6,3 +6,7 @@ s3transfer==0.19.0
 six==1.17.0
 urllib3==2.7.0
 python-dotenv
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+strands-agents 
+strands-agents-tools
