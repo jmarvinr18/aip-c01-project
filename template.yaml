@@ -26,8 +26,8 @@ Resources:
       FunctionName: clarvoKBSync
       Handler: lambda.clarvoKBSync.lambda_handler
 
-  ClarvoChatStream: # <-- this is what you use in commands
+  ClarvoDDB: # <-- this is what you use in commands
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: clarvoChatStream
-      Handler: lambda.clarvoChatStream.lambda_handler
+      FunctionName: clarvoBedrockAgentRetriever
+      Handler: lambda.query_db.lambda_handler

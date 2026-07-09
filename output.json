@@ -1,1 +1,8 @@
-{"errorMessage": "'requestContext'", "errorType": "KeyError", "requestId": "6e6114b7-b09c-4ab8-aa2d-0f29fd5f71f7", "stackTrace": ["  File \"/var/task/lambda/clarvoChatStream.py\", line 13, in lambda_handler\n    rc = event[\"requestContext\"]\n"]}
+{
+    "errorMessage": "'requestContext'",
+    "errorType": "KeyError",
+    "requestId": "6e6114b7-b09c-4ab8-aa2d-0f29fd5f71f7",
+    "stackTrace": [
+        "  File \"/var/task/lambda/clarvoChatStream.py\", line 13, in lambda_handler\n    rc = event[\"requestContext\"]\n"
+    ]
+}

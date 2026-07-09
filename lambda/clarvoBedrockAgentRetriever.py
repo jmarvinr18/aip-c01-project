@@ -1,14 +1,16 @@
 import json
 import boto3
-import os
-import urllib.parse
+import time
+import uuid
 from urllib.parse import urlparse
 from pathlib import Path
 
+ddb = boto3.client("dynamodb", region_name="ap-southeast-1")
 s3 = boto3.client("s3", region_name="ap-southeast-1")
 agent_rt = boto3.client("bedrock-agent-runtime", region_name="ap-southeast-1")
 brt = boto3.client("bedrock-runtime", region_name="ap-southeast-1")
 MODEL = "apac.anthropic.claude-3-haiku-20240307-v1:0"
+# session_id = str(uuid.uuid4())
 
 TOOL_CONFIG = {
     "tools": [{
@@ -49,8 +51,7 @@ def search_documents(query: str, knowledge_base_id: str, num_results: int = 5):
     } for r in response["retrievalResults"]]
 
 
-def ask(question: str, knowledge_base_id: str, num_results: int = 5):
-    messages = [{"role": "user", "content": [{"text": question}]}]
+def ask(messages: str, knowledge_base_id: str, num_results: int = 5):
 
     # -- turn 1: model may request the tool --
     response = brt.converse(
@@ -82,19 +83,55 @@ def ask(question: str, knowledge_base_id: str, num_results: int = 5):
             modelId=MODEL, messages=messages, toolConfig=TOOL_CONFIG)
 
         print(f"FINAL: {json.dumps(final)}")
-        print(f"CONTENT: {final["output"]["message"]["content"]}")
+        print(f"CONTENT: {final['output']['message']['content'][0]['text']}")
 
         # final["output"]["message"]["content"][0]["text"], hits
-        return final
+        return final['output']['message']['content'][0]['text']
 
     print(f"OUT: {out}")
-    print(f"CONTENT: {out["content"]}")
+    print(f"CONTENT: {out["content"][0]["text"]}")
 
     # model answered without needing the tool
-    return out
+    return out["content"][0]["text"]
+
+
+def load_history(session_id, n=10):
+
+    print(f"SESSION_ID: {session_id}")
+
+    r = ddb.query(TableName="clarvo-conversations",
+                  KeyConditionExpression="session_id = :s",
+                  ExpressionAttributeValues={":s": {"S": session_id}})
+    print(f"R: {r}")
+
+    return [{"role": i["role"]["S"], "content": [{"text": i["text"]["S"]}]} for i in reversed(r["Items"])]
+
+
+def save_turn(session_id, role, text):
+
+    print(f"SAVE_TURN: {text}")
+    ddb.put_item(TableName="clarvo-conversations",
+                 Item={"session_id": {"S": session_id}, "ts": {"N": str(time.time_ns())}, "role": {"S": role}, "text": {"S": text}})
 
 
 def lambda_handler(event, context):
-    response = ask(event["detail"]["text"], event["detail"]["kb_id"])
-    print(f"RESPONSE: {response}")
-    return response
+
+    question = event["detail"]["text"]
+    session_id = event["detail"]["session_id"]
+
+    history = load_history(session_id)
+
+    print(f"HISTORIES: {history}")
+
+    messages = history + [{"role": "user", "content": [{"text": question}]}]
+
+    print(f"MESSAGES: {messages}")
+
+    answer = ask(messages, event["detail"]["kb_id"])
+
+    print(f"RESPONSE: {json.dumps(answer)}")
+
+    save_turn(session_id, "user", question)
+    save_turn(session_id, "user", answer)
+
+    return answer
